@@ -11,8 +11,9 @@ const MenuSystem = {
           backgroundColor: "#ffffff",
           borderRadius: "8px",
           itemPadding: "20px",
-          itemBorderColor: "#f0f0f0",
-          itemBackgroundColor: "#fafafa"
+          itemBackgroundColor: "#fafafa",
+          itemBorderColor: "transparent", // Remove borders by default
+          centerText: true               // Center text by default
         },
         
         // Typography settings
@@ -91,7 +92,16 @@ const MenuSystem = {
         menuItem.style.padding = this.config.layout.itemPadding;
         menuItem.style.borderRadius = this.config.layout.borderRadius;
         menuItem.style.backgroundColor = this.config.layout.itemBackgroundColor;
-        menuItem.style.border = `1px solid ${this.config.layout.itemBorderColor}`;
+        
+        // Only add border if not transparent
+        if (this.config.layout.itemBorderColor !== 'transparent') {
+          menuItem.style.border = `1px solid ${this.config.layout.itemBorderColor}`;
+        }
+        
+        // Center text if specified
+        if (this.config.layout.centerText) {
+          menuItem.style.textAlign = "center";
+        }
         
         // Add transition for hover effects if enabled
         if (this.config.animation.enableHoverEffect) {
