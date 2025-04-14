@@ -10,7 +10,7 @@ const MenuSystem = {
           spacing: "20px",
           backgroundColor: "#ffffff",
           borderRadius: "8px",
-          itemPadding: "20px",
+          itemPadding: "0px",
           itemBackgroundColor: "#fafafa",
           itemBorderColor: "transparent", // Remove borders by default
           centerText: true               // Center text by default
@@ -28,7 +28,7 @@ const MenuSystem = {
         
         // Animation settings
         animation: {
-          enableHoverEffect: true,
+          enableHoverEffect: false,
           transitionSpeed: "0.3s"
         }
       };
